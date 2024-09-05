@@ -1,0 +1,3 @@
+-- Practice 1
+-- DBMS를 설치 혹은 Supabase로 접속하고 데이터베이스 my_database를 만든다.
+-- 강의실습용.sql의 코드로 테이블과 로우를 생성한다.
