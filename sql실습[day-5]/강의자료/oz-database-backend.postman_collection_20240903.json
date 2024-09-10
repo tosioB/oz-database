@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "d15736c0-0581-4358-b7ca-0eb5554936f4",
+		"name": "oz-database-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8964007"
+	},
+	"item": [
+		{
+			"name": "Film",
+			"item": [
+				{
+					"name": "get many",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/film",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"film"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get many query parameter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/film?limit=2&page=3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"film"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "page",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/film/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"film",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Film Post",
+			"item": [
+				{
+					"name": "get many",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/film/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"film",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/film/post/10",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"film",
+								"post",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Like",
+			"item": [
+				{
+					"name": "get count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/film/post/like/1?count=true",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"film",
+								"post",
+								"like",
+								"1"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get my count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/film/post/like/1/customer/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"film",
+								"post",
+								"like",
+								"1",
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reactionType\": \"LIKE\",\n    \"customerId\": 1,\n    \"postId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/film/post/like",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"film",
+								"post",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unlike",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/film/post/like/1/customer/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"film",
+								"post",
+								"like",
+								"1",
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "get comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/film/post/1/comment",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"film",
+								"post",
+								"1",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"test comment\",\n    \"customerId\": 1,\n    \"postId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/film/post/1/comment",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"film",
+								"post",
+								"1",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "[DAY 4] Post",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/post/21",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createOne",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"film_id\": 21,\n    \"content\": \"“test-content\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putOne",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"film_id\": 22,\n    \"content\": \"99999-test-content\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/21",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOne",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"film_id\": 22,\n    \"content\": \"99999-test-content\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/21",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"21"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/health",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET strange",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/strange",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"strange"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8090",
+			"type": "string"
+		}
+	]
+}
